@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<title>Sniper IA Motion Estendido</title>
+<title>Sniper IA Motion Ajustado</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -88,7 +88,7 @@
 
     #loader-overlay .logo-container {
         display: flex;
-        font-size: clamp(3.5rem, 12vw, 10rem);
+        font-size: clamp(3rem, 10vw, 8rem);
         font-weight: 800;
         font-style: italic;
         text-transform: uppercase;
@@ -187,7 +187,7 @@
         transition: opacity 1s;
         font-family: 'Inter', sans-serif;
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: bold;
         letter-spacing: 3px;
         display: flex;
@@ -269,7 +269,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px;
+        padding: 15px;
         opacity: 0;
         visibility: hidden;
         width: 100%;
@@ -280,8 +280,8 @@
     #scene-intro, #scene-bairro, #scene-redes, #scene-cards-massa, #scene-final { z-index: 20; }
 
     .intro-logo {
-        font-size: clamp(2.5rem, 12vw, 5rem);
-        letter-spacing: clamp(4px, 2vw, 8px);
+        font-size: clamp(2rem, 10vw, 4rem);
+        letter-spacing: clamp(3px, 1.5vw, 6px);
         text-shadow: 0 0 30px var(--primary);
         text-align: center;
         width: 100%;
@@ -297,27 +297,27 @@
     .badge-explosive {
         border: 2px solid var(--primary);
         background: rgba(119, 66, 223, 0.1);
-        padding: 8px 24px;
+        padding: 6px 20px;
         border-radius: 50px;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        font-size: clamp(0.7rem, 3vw, 0.85rem);
+        font-size: clamp(0.65rem, 2.5vw, 0.8rem);
         box-shadow: 0 0 30px rgba(119, 66, 223, 0.5), inset 0 0 10px rgba(119, 66, 223, 0.5);
     }
 
     .main-title {
-        font-size: clamp(2.5rem, 12vw, 5rem);
+        font-size: clamp(2rem, 10vw, 4rem);
         text-align: center;
         line-height: 1;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
 
     .mockup-img {
-        width: 90%;
-        max-width: 360px;
+        width: 85%;
+        max-width: 300px;
         object-fit: contain;
-        filter: drop-shadow(0 30px 40px rgba(0,0,0,0.9));
+        filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
         transform-style: preserve-3d;
         will-change: transform, opacity, filter;
     }
@@ -328,31 +328,31 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        gap: 15px;
+        gap: 12px;
         margin-top: 5vh;
         perspective: 1200px;
     }
 
     .feature-card {
-        width: 100%;
-        max-width: 380px;
+        width: 90%;
+        max-width: 340px;
         background: rgba(10, 10, 10, 0.85);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         border: 1px solid rgba(119, 66, 223, 0.4);
-        padding: 18px;
+        padding: 15px;
         border-radius: 16px;
         display: flex;
         align-items: flex-start;
-        gap: 15px;
+        gap: 12px;
         box-shadow: 0 15px 40px rgba(0,0,0,0.7);
         transform-style: preserve-3d;
         will-change: transform, opacity;
     }
 
     .check-icon {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
         border-radius: 50%;
         background: var(--primary);
         display: flex;
@@ -364,20 +364,20 @@
 
     .feature-title {
         font-family: 'Archivo Black', sans-serif;
-        font-size: clamp(1rem, 4vw, 1.2rem);
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
         color: #ffffff;
         line-height: 1.1;
-        margin-bottom: 5px;
+        margin-bottom: 4px;
     }
 
     .feature-desc {
-        font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+        font-size: clamp(0.75rem, 3vw, 0.85rem);
         color: #bbbbbb;
         line-height: 1.3;
     }
 
     .final-cta {
-        font-size: clamp(2rem, 10vw, 4rem);
+        font-size: clamp(1.8rem, 8vw, 3.5rem);
         text-align: center;
         line-height: 1.1;
         text-shadow: 0 10px 40px rgba(119, 66, 223, 1);
@@ -408,7 +408,7 @@
     
     <div id="scroll-prompt">
         <span>Toque ou Role para Iniciar</span>
-        <i data-lucide="chevron-down" class="w-8 h-8 animate-bounce-prompt"></i>
+        <i data-lucide="chevron-down" class="w-6 h-6 animate-bounce-prompt"></i>
     </div>
 </div>
 
@@ -429,22 +429,22 @@
             <h2 class="font-display main-title drop-shadow-2xl">
                 SNIPER IA <br><span class="text-highlight">WPP</span>
             </h2>
-            <div class="badge-explosive mb-6">Máquina de Vendas</div>
+            <div class="badge-explosive mb-5">Máquina de Vendas</div>
         </div>
         <div id="mockup-container" class="relative w-full flex justify-center">
-            <img src="https://res.cloudinary.com/dzcaxmbjn/image/upload/v1773192018/Sem_nome_750_x_500_px_24_uv4y6m.png" class="mockup-img" id="mockup-img">
+            <img src="https://res.cloudinary.com/dzcaxmbjn/image/upload/v1773192018/Sem_nome_750_x_500_px_24_uv4y6m.png" class="mockup-img" id="mockup-img" loading="eager">
         </div>
     </div>
 
     <div class="scene" id="scene-bairro">
-        <h2 class="font-display text-[clamp(2.5rem,10vw,4rem)] text-center leading-[1] text-white drop-shadow-2xl mb-4">
+        <h2 class="font-display text-[clamp(2rem,8vw,3.5rem)] text-center leading-[1] text-white drop-shadow-2xl mb-4">
             LOCALIZA POR <br><span class="text-highlight">BAIRRO</span>
         </h2>
         <div class="badge-explosive">Precisão Geográfica</div>
     </div>
 
     <div class="scene" id="scene-redes">
-        <h2 class="font-display text-[clamp(2.5rem,10vw,4rem)] text-center leading-[1] text-white drop-shadow-2xl mb-4">
+        <h2 class="font-display text-[clamp(2rem,8vw,3.5rem)] text-center leading-[1] text-white drop-shadow-2xl mb-4">
             PESQUISA NO <br><span class="text-highlight">INSTAGRAM</span><br>& LINKEDIN
         </h2>
         <div class="badge-explosive">Mineração Profunda</div>
@@ -453,7 +453,7 @@
     <div class="scene" id="scene-cards-massa">
         <div class="cards-container">
             <div class="feature-card f-card">
-                <div class="check-icon"><i data-lucide="zap" class="w-5 h-5 text-white"></i></div>
+                <div class="check-icon"><i data-lucide="zap" class="w-4 h-4 text-white"></i></div>
                 <div>
                     <h3 class="feature-title">DISPARO EM MASSA WPP</h3>
                     <p class="feature-desc">Envie milhares de mensagens por dia automaticamente sem depender de cliques manuais.</p>
@@ -461,7 +461,7 @@
             </div>
             
             <div class="feature-card f-card">
-                <div class="check-icon"><i data-lucide="shield-check" class="w-5 h-5 text-white"></i></div>
+                <div class="check-icon"><i data-lucide="shield-check" class="w-4 h-4 text-white"></i></div>
                 <div>
                     <h3 class="feature-title">100% ANTI-BLOQUEIO</h3>
                     <p class="feature-desc">Sistema inteligente de rotação de delays, chips e textos dinâmicos para blindar sua operação.</p>
@@ -475,7 +475,7 @@
             Sua agenda lotada<br>
             <span class="text-highlight">no piloto automático.</span>
         </h2>
-        <div id="final-logo" class="font-display text-2xl tracking-widest mt-12 opacity-50">LEANTTRO.</div>
+        <div id="final-logo" class="font-display text-xl tracking-widest mt-10 opacity-50">LEANTTRO.</div>
     </div>
 
 </div>
@@ -655,7 +655,7 @@
               5.5
           )
           .fromTo("#mockup-img", 
-              { y: 500, scale: 0.1, rotationX: 90, opacity: 0 }, 
+              { y: 500, scale: 0.1, rotationX: 90, opacity: 0, filter: "brightness(1) blur(0px)" }, 
               { y: 0, scale: 1, rotationX: 0, opacity: 1, duration: 2, ease: "expo.out" }, 
               5.5
           )
