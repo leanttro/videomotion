@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<title>Sniper IA Motion Integrado</title>
+<title>Sniper IA Motion Estendido</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -209,7 +209,7 @@
 
     .scroll-track {
         width: 100%;
-        height: 1000vh;
+        height: 2500vh;
         position: absolute;
         top: 0;
         left: 0;
@@ -270,12 +270,14 @@
         align-items: center;
         justify-content: center;
         padding: 20px;
-        z-index: 10;
         opacity: 0;
         visibility: hidden;
         width: 100%;
         height: 100%;
     }
+
+    #scene-mockup { z-index: 5; }
+    #scene-intro, #scene-bairro, #scene-redes, #scene-cards-massa, #scene-final { z-index: 20; }
 
     .intro-logo {
         font-size: clamp(2.5rem, 12vw, 5rem);
@@ -283,6 +285,11 @@
         text-shadow: 0 0 30px var(--primary);
         text-align: center;
         width: 100%;
+    }
+
+    .char {
+        display: inline-block;
+        will-change: transform, opacity;
     }
 
     .text-highlight { color: var(--primary); }
@@ -312,7 +319,7 @@
         object-fit: contain;
         filter: drop-shadow(0 30px 40px rgba(0,0,0,0.9));
         transform-style: preserve-3d;
-        will-change: transform, opacity;
+        will-change: transform, opacity, filter;
     }
 
     .cards-container {
@@ -324,7 +331,6 @@
         gap: 15px;
         margin-top: 5vh;
         perspective: 1200px;
-        z-index: 20;
     }
 
     .feature-card {
@@ -413,7 +419,9 @@
     <div class="cyber-grid" id="main-grid"></div>
 
     <div class="scene" id="scene-intro">
-        <h1 class="font-display intro-logo" id="logo-intro">LEANTTRO<span class="text-highlight">.</span></h1>
+        <h1 class="font-display intro-logo" id="logo-intro">
+            <span class="char">L</span><span class="char">E</span><span class="char">A</span><span class="char">N</span><span class="char">T</span><span class="char">T</span><span class="char">R</span><span class="char">O</span><span class="char text-highlight">.</span>
+        </h1>
     </div>
 
     <div class="scene" id="scene-mockup">
@@ -428,33 +436,35 @@
         </div>
     </div>
 
-    <div class="scene" id="scene-features">
-        <div id="mockup-small" class="absolute top-10 w-full flex justify-center opacity-0 z-0">
-            <img src="https://res.cloudinary.com/dzcaxmbjn/image/upload/v1773192018/Sem_nome_750_x_500_px_24_uv4y6m.png" style="width: 85%; max-width: 360px; filter: brightness(0.2) blur(5px);">
-        </div>
-        
+    <div class="scene" id="scene-bairro">
+        <h2 class="font-display text-[clamp(2.5rem,10vw,4rem)] text-center leading-[1] text-white drop-shadow-2xl mb-4">
+            LOCALIZA POR <br><span class="text-highlight">BAIRRO</span>
+        </h2>
+        <div class="badge-explosive">Precisão Geográfica</div>
+    </div>
+
+    <div class="scene" id="scene-redes">
+        <h2 class="font-display text-[clamp(2.5rem,10vw,4rem)] text-center leading-[1] text-white drop-shadow-2xl mb-4">
+            PESQUISA NO <br><span class="text-highlight">INSTAGRAM</span><br>& LINKEDIN
+        </h2>
+        <div class="badge-explosive">Mineração Profunda</div>
+    </div>
+
+    <div class="scene" id="scene-cards-massa">
         <div class="cards-container">
             <div class="feature-card f-card">
-                <div class="check-icon"><i data-lucide="check" class="w-5 h-5 text-white"></i></div>
+                <div class="check-icon"><i data-lucide="zap" class="w-5 h-5 text-white"></i></div>
                 <div>
-                    <h3 class="feature-title">VENDAS EM ESCALA</h3>
-                    <p class="feature-desc">Aborde centenas de empresas por dia automaticamente com custo zero de equipe humana.</p>
+                    <h3 class="feature-title">DISPARO EM MASSA WPP</h3>
+                    <p class="feature-desc">Envie milhares de mensagens por dia automaticamente sem depender de cliques manuais.</p>
                 </div>
             </div>
             
             <div class="feature-card f-card">
-                <div class="check-icon"><i data-lucide="check" class="w-5 h-5 text-white"></i></div>
+                <div class="check-icon"><i data-lucide="shield-check" class="w-5 h-5 text-white"></i></div>
                 <div>
-                    <h3 class="feature-title">MINERADOR LOCAL</h3>
-                    <p class="feature-desc">A inteligência artificial varre bairros específicos e extrai apenas contatos qualificados.</p>
-                </div>
-            </div>
-            
-            <div class="feature-card f-card">
-                <div class="check-icon"><i data-lucide="check" class="w-5 h-5 text-white"></i></div>
-                <div>
-                    <h3 class="feature-title">DISPARO ANTI-BAN</h3>
-                    <p class="feature-desc">Sistema de rotação de delays e textos únicos para proteger sua infraestrutura comercial.</p>
+                    <h3 class="feature-title">100% ANTI-BLOQUEIO</h3>
+                    <p class="feature-desc">Sistema inteligente de rotação de delays, chips e textos dinâmicos para blindar sua operação.</p>
                 </div>
             </div>
         </div>
@@ -617,96 +627,97 @@
         });
 
         tl.to("#main-grid", { 
-            scale: 1.2, 
-            opacity: 0.5, 
-            duration: 15 
+            scale: 1.5, 
+            opacity: 0.6, 
+            duration: 30 
         }, 0);
 
         tl.set("#scene-intro", { autoAlpha: 1 }, 0)
-          .fromTo("#logo-intro", 
-              { scale: 0.1, rotationX: 90, opacity: 0 }, 
-              { scale: 1, rotationX: 0, opacity: 1, duration: 1.5, ease: "elastic.out(1, 0.4)" }, 
+          .fromTo(".char", 
+              { y: -300, scale: 0.2, rotationZ: -180, opacity: 0 }, 
+              { y: 0, scale: 1, rotationZ: 0, opacity: 1, duration: 1.5, stagger: 0.15, ease: "bounce.out" }, 
               0.5
           )
-          .to("#logo-intro", { 
-              scale: 6, 
-              opacity: 0, 
-              filter: "blur(30px)", 
-              duration: 1.5, 
-              ease: "power4.in" 
-          }, 2.5)
-          .set("#scene-intro", { autoAlpha: 0 }, 4);
-
-        tl.set("#scene-mockup", { autoAlpha: 1 }, 3.5)
-          .fromTo("#title-group", 
-              { y: -150, opacity: 0, scale: 0.5 }, 
-              { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: "back.out(1.5)" }, 
-              3.5
-          )
-          .fromTo("#mockup-img", 
-              { y: 400, scale: 0.2, rotationX: 80, opacity: 0 }, 
-              { y: 0, scale: 1, rotationX: 0, opacity: 1, duration: 2, ease: "expo.out" }, 
-              3.5
-          )
-          .to("#title-group", { 
-              y: -100, 
-              opacity: 0, 
-              scale: 1.2, 
-              duration: 1.5 
-          }, 6)
-          .to("#mockup-img", { 
-              scale: 4, 
-              y: -200, 
+          .to(".char", { 
+              scale: 8, 
               opacity: 0, 
               filter: "blur(20px)", 
-              duration: 2, 
-              ease: "power3.in" 
-          }, 6)
-          .set("#scene-mockup", { autoAlpha: 0 }, 8);
+              duration: 1.5, 
+              stagger: 0.1,
+              ease: "power4.in" 
+          }, 4)
+          .set("#scene-intro", { autoAlpha: 0 }, 6);
 
-        tl.set("#scene-features", { autoAlpha: 1 }, 7.5)
-          .fromTo("#mockup-small", 
-              { scale: 0, opacity: 0, rotationZ: -45 }, 
-              { scale: 1, opacity: 1, rotationZ: 0, duration: 1.5 }, 
-              7.5
+        tl.set("#scene-mockup", { autoAlpha: 1 }, 5.5)
+          .fromTo("#title-group", 
+              { y: -200, opacity: 0, scale: 0.5 }, 
+              { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: "back.out(1.5)" }, 
+              5.5
           )
+          .fromTo("#mockup-img", 
+              { y: 500, scale: 0.1, rotationX: 90, opacity: 0 }, 
+              { y: 0, scale: 1, rotationX: 0, opacity: 1, duration: 2, ease: "expo.out" }, 
+              5.5
+          )
+          .to("#title-group", { 
+              y: -150, opacity: 0, scale: 1.5, duration: 1.5 
+          }, 9)
+          .to("#mockup-img", { 
+              scale: 0.8, y: -200, filter: "brightness(0.3) blur(5px)", duration: 2, ease: "power2.inOut" 
+          }, 9)
+          .set("#title-group", { display: "none" }, 11);
+
+        tl.set("#scene-bairro", { autoAlpha: 1 }, 10.5)
+          .fromTo("#scene-bairro", 
+              { x: window.innerWidth, rotationY: 45, opacity: 0 }, 
+              { x: 0, rotationY: 0, opacity: 1, duration: 1.5, ease: "power4.out" }, 
+              10.5
+          )
+          .to("#scene-bairro", { 
+              x: -window.innerWidth, rotationY: -45, opacity: 0, duration: 1.5, ease: "power3.in" 
+          }, 14)
+          .set("#scene-bairro", { autoAlpha: 0 }, 15.5);
+
+        tl.set("#scene-redes", { autoAlpha: 1 }, 15)
+          .fromTo("#scene-redes", 
+              { scale: 0.2, rotationX: -90, opacity: 0 }, 
+              { scale: 1, rotationX: 0, opacity: 1, duration: 1.5, ease: "back.out(1.5)" }, 
+              15
+          )
+          .to("#scene-redes", { 
+              scale: 3, opacity: 0, filter: "blur(20px)", duration: 1.5, ease: "power4.in" 
+          }, 19)
+          .set("#scene-redes", { autoAlpha: 0 }, 20.5);
+
+        tl.set("#scene-cards-massa", { autoAlpha: 1 }, 20)
           .fromTo(".f-card", 
-              { x: window.innerWidth, rotationY: 90, opacity: 0, scale: 0.5 }, 
-              { x: 0, rotationY: 0, opacity: 1, scale: 1, duration: 1.5, stagger: 0.4, ease: "back.out(1.2)" }, 
-              8
+              { z: -1000, y: 200, rotationX: 90, opacity: 0 }, 
+              { z: 0, y: 0, rotationX: 0, opacity: 1, duration: 1.5, stagger: 0.4, ease: "elastic.out(1, 0.7)" }, 
+              20
           )
           .to(".f-card", { 
-              x: -window.innerWidth, 
-              rotationY: -90, 
-              opacity: 0, 
-              scale: 0.5, 
-              duration: 1.5, 
-              stagger: 0.3, 
-              ease: "power4.in" 
-          }, 11)
-          .to("#mockup-small", { 
-              scale: 3, 
-              opacity: 0, 
-              filter: "blur(30px)", 
-              duration: 1.5 
-          }, 11.5)
-          .set("#scene-features", { autoAlpha: 0 }, 13);
+              y: -300, rotationX: -90, opacity: 0, duration: 1.5, stagger: 0.3, ease: "power3.in" 
+          }, 24)
+          .set("#scene-cards-massa", { autoAlpha: 0 }, 26);
 
-        tl.set("#scene-final", { autoAlpha: 1 }, 12.5)
+        tl.to("#mockup-img", { scale: 3, opacity: 0, duration: 1.5 }, 25);
+        tl.to("#scene-mockup", { autoAlpha: 0, duration: 1 }, 26.5);
+
+        tl.set("#scene-final", { autoAlpha: 1 }, 26.5)
           .fromTo("#main-glow", 
               { scale: 1 }, 
-              { scale: 4, background: "radial-gradient(circle, rgba(119, 66, 223, 0.7) 0%, transparent 50%)", duration: 2 }, 
-              12.5
+              { scale: 5, background: "radial-gradient(circle, rgba(119, 66, 223, 0.8) 0%, transparent 50%)", duration: 2 }, 
+              26.5
           )
           .fromTo("#final-text", 
-              { scale: 0.2, opacity: 0, filter: "blur(30px)", rotationX: -90 }, 
-              { scale: 1, opacity: 1, filter: "blur(0px)", rotationX: 0, duration: 2, ease: "elastic.out(1, 0.5)" }, 
-              12.5
+              { scale: 0.1, opacity: 0, filter: "blur(30px)", rotationY: 90 }, 
+              { scale: 1, opacity: 1, filter: "blur(0px)", rotationY: 0, duration: 2, ease: "elastic.out(1, 0.5)" }, 
+              26.5
           )
           .fromTo("#final-logo", 
-              { y: 100, opacity: 0, letterSpacing: "0px" }, 
-              { y: 0, opacity: 0.8, letterSpacing: "12px", duration: 1.5 }, 
-              13.5
+              { y: 150, opacity: 0, letterSpacing: "-10px" }, 
+              { y: 0, opacity: 1, letterSpacing: "15px", duration: 1.5 }, 
+              27.5
           );
     }
 </script>
